@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, :restaurants, :saved_restaurants, :dishes
-      #post '/fetchrestaurants' , to: 'restaurants#getplaces'
+      post '/fetchrestaurants' , to: 'restaurants#fetchrestaurants'
     end
   end
 
