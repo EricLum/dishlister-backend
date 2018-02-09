@@ -4,7 +4,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :location
       t.string :price_range
-
+       
       t.timestamps
     end
   end
