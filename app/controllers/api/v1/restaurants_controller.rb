@@ -1,5 +1,19 @@
 class Api::V1::RestaurantsController < ApplicationController
 
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      render json: @restaurant
+    else
+      #do nothing
+    end
+  end
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
+    render json: @restaurant
+  end
+
   def fetchrestaurants
     latitude = restaurant_params[:latitude]
     longitude = restaurant_params[:longitude]
