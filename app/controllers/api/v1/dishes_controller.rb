@@ -11,7 +11,6 @@ class Api::V1::DishesController < ApplicationController
   end
 
   def show
-    byebug
     @dish = Dish.find(params[:id])
     render json: @dish
   end
