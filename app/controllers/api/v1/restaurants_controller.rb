@@ -1,7 +1,6 @@
 class Api::V1::RestaurantsController < ApplicationController
 
   def fetchrestaurants
-    byebug
     latitude = restaurant_params[:latitude]
     longitude = restaurant_params[:longitude]
     apiKey = ""
