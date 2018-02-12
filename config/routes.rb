@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, :restaurants, :saved_restaurants, :dishes
       post '/fetchrestaurants' , to: 'restaurants#fetchrestaurants'
+      post '/users/signup', to: 'users#signup'
+      post '/users/login', to: 'users#login'
     end
   end
 
