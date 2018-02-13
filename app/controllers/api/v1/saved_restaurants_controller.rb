@@ -1,7 +1,6 @@
 class Api::V1::SavedRestaurantsController < ApplicationController
 
   def create
-    byebug
     @saved_restaurant = SavedRestaurant.new(saved_restaurant_params)
     if @saved_restaurant.save
       render json: @saved_restaurant
@@ -21,12 +20,24 @@ class Api::V1::SavedRestaurantsController < ApplicationController
   end
 
   def update
+    #find by user id and restaurant id
     @saved_restaurant = SavedRestaurant.find(params[:id])
+
     if @saved_restaurant
       @saved_restaurant.update(restaurant_params)
       render json: @saved_restaurant
     else
 
+    end
+  end
+
+  def find
+    byebug
+    @saved_restaurant = SavedRestaurant.find_by(user_id: saved_restaurant_params[:user_id],restaurant_id: saved_restaurant_params[:restaurant_id])
+
+    if @saved_restaurant
+      @saved_restaurant.update(saved_restaurant_params)
+      render json: @saved_restaurant
     end
   end
 

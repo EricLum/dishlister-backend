@@ -1,6 +1,7 @@
 class Api::V1::DishesController < ApplicationController
 
   def create
+    byebug
     @dish = Dish.new(dish_params)
     if @dish.save
       render json: @dish
