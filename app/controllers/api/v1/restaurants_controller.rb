@@ -17,7 +17,7 @@ class Api::V1::RestaurantsController < ApplicationController
   def fetchrestaurants
     latitude = restaurant_params[:latitude]
     longitude = restaurant_params[:longitude]
-    apiKey = ""
+    apiKey = "AIzaSyAV2AmhhBY5oyWjjdgjJBKmLTwGs_98czk"
     url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{latitude},%20#{longitude}&radius=500&type=restaurant&key=#{apiKey}"
     response = RestClient.get(url)
     @jsonResponse = JSON.parse(response)['results']
@@ -26,6 +26,6 @@ class Api::V1::RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:latitude, :longitude, :name, :location, :price_range)
+    params.require(:restaurant).permit(:latitude, :longitude, :name, :location, :price_range, :api_id)
   end
 end

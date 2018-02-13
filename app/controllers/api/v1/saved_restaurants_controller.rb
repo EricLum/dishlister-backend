@@ -1,6 +1,7 @@
 class Api::V1::SavedRestaurantsController < ApplicationController
 
   def create
+    byebug
     @saved_restaurant = SavedRestaurant.new(saved_restaurant_params)
     if @saved_restaurant.save
       render json: @saved_restaurant
