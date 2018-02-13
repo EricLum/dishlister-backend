@@ -17,7 +17,7 @@ class Api::V1::RestaurantsController < ApplicationController
   def fetchrestaurants
     latitude = restaurant_params[:latitude]
     longitude = restaurant_params[:longitude]
-    apiKey = ""
+    apiKey = ENV["places_api_key"]
     url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{latitude},%20#{longitude}&radius=500&type=restaurant&key=#{apiKey}"
     response = RestClient.get(url)
     @jsonResponse = JSON.parse(response)['results']
