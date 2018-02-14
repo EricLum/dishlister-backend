@@ -9,6 +9,14 @@ class Api::V1::SavedRestaurantsController < ApplicationController
     end
   end
 
+  def locate
+    @saved_restaurant = SavedRestaurant.find_by(user_id: saved_restaurant_params[:user_id],restaurant_id: saved_restaurant_params[:restaurant_id])
+
+    if @saved_restaurant
+      render json: @saved_restaurant
+    end
+  end
+
   def show
     @saved_restaurant = SavedRestaurant.find(params[:id])
     render json: @saved_restaurant
@@ -32,7 +40,6 @@ class Api::V1::SavedRestaurantsController < ApplicationController
   end
 
   def find
-    byebug
     @saved_restaurant = SavedRestaurant.find_by(user_id: saved_restaurant_params[:user_id],restaurant_id: saved_restaurant_params[:restaurant_id])
 
     if @saved_restaurant

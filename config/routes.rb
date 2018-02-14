@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post '/users/signup', to: 'users#signup'
       post '/users/login', to: 'users#login'
       post '/saved_restaurants/find', to: 'saved_restaurants#find'
+      post '/saved_restaurants/locate', to: 'saved_restaurants#locate'
     end
   end
 
