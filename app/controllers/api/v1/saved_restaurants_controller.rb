@@ -10,9 +10,11 @@ class Api::V1::SavedRestaurantsController < ApplicationController
   end
 
   def locate
+    byebug
     @saved_restaurant = SavedRestaurant.find_by(user_id: saved_restaurant_params[:user_id],restaurant_id: saved_restaurant_params[:restaurant_id])
 
     if @saved_restaurant
+      dishes = @saved_retaurant.dishes
       render json: @saved_restaurant
     end
   end
