@@ -1,13 +1,13 @@
 class Api::V1::RestaurantsController < ApplicationController
 
   def create
-    byebug
+
     @restaurant = Restaurant.find_by(api_id: restaurant_params['api_id'])
     if !@restaurant
       @restaurant = Restaurant.create(restaurant_params)
     end
 
-    if @restaurant.save
+    if @restaurant
       render json: @restaurant
     else
       #do nothing
