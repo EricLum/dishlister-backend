@@ -1,24 +1,15 @@
-# README
+# Dishlister Backend
+### Backend Installation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. See [Front repository](https://github.com/ErlcLum/dishlister-frontend)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2. Start Postgres and setup database
+ ``` 
+ rails db:setup
+ rails db:migrate
+ rails db:seed
+ ```
+3. Start backend server on port 3001
+```
+rails s -p 3001
+```
