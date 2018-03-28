@@ -1,7 +1,7 @@
 # Dishlister Backend
 ### Backend Installation
 
-1. See [Front repository](https://github.com/ErlcLum/dishlister-frontend)
+1. See [frontend repository](https://github.com/ErlcLum/dishlister-frontend)
 
 2. Start Postgres and setup database
  ``` 
